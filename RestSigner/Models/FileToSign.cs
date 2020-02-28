@@ -23,5 +23,11 @@ namespace RestSigner.Models
             //Stream writer = new FileStream(path, FileMode.Create);
             return path;
         }
+
+        public void updateContent(string path)
+        {
+            byte[] bufferArray = File.ReadAllBytes(path);
+            encodedFIleContent = Convert.ToBase64String(bufferArray);
+        }
     }
 }
